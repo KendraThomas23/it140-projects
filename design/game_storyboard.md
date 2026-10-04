@@ -7,25 +7,24 @@
 
 **Theme:**
 
-TODO: Name and briefly describe your game's theme.
+Haunted Mansion: The game takes place inside an old, haunted mansion. The player must explore the mansion and collect items while avoiding a dangerous ghost.
 
 **Storyline:**
 
-TODO: In one short paragraph, explain the setting, the player's goal, the items
-the player must gather, and the threat created by the villain.
+The player is trapped inside an old haunted mansion and must find six items that can help them escape. The player starts in the Entrance Hall and must explore different rooms to collect an old key, flashlight, silver coin, ancient book, skeleton key, and rope. The player must collect all six items before entering the Attic, where a dangerous ghost called The Shadow is waiting. If the player enters the Attic before collecting all six items, The Shadow catches them and the player loses. If the player collects all six items before encountering The Shadow, the player wins.
 
 ## Rooms
 
 Project One requires a minimum of eight rooms.
 
-1. TODO: Start room
-2. TODO: Room
-3. TODO: Room
-4. TODO: Room
-5. TODO: Room
-6. TODO: Room
-7. TODO: Room
-8. TODO: Villain room
+Entrance Hall - Start room
+Kitchen
+Dining Room
+Basement
+Study
+Library
+Bedroom
+Attic - Villain room
 
 Add more rooms if your design needs them.
 
@@ -34,19 +33,19 @@ Add more rooms if your design needs them.
 With the minimum eight-room design, Project One requires at least six items.
 Every room except the start room and villain room must contain one item.
 
-1. TODO: Item
-2. TODO: Item
-3. TODO: Item
-4. TODO: Item
-5. TODO: Item
-6. TODO: Item
+Flashlight - Kitchen
+Silver Coin - Dining Room
+Rope - Basement
+Ancient Book - Study
+Old Key - Library
+Skeleton Key - Bedroom
 
 If you add rooms beyond the minimum, add an item for every additional room
 except the start room and villain room.
 
 ## Villain
 
-TODO: Identify and briefly describe the villain.
+The Shadow is a dangerous ghost that lives in the Attic. The player must avoid the Attic until all six items have been collected. If the player enters the Attic too early, The Shadow catches the player and the game ends.
 
 ## Storyboard and Map Check
 
