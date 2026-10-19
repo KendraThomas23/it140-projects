@@ -1,43 +1,114 @@
 """Project Two starter for the student's text-based adventure game."""
 
-# TODO: Add the full-name comment required by Project Two directions.
+# TODO: Kendra Thomas
 
 
 def show_instructions():
     """Display the game objective and available commands."""
-    # TODO: Print instructions that match your game and commands.
+    print("Welcome to the Haunted Mansion!")
+    print("Collect all six items before entering the Attic.")
+    print("Move commands: north, south, east, west")
+    print("To collect an item, type: get item name")
+    print("Type quit to exit the game.")
     pass
 
 
 def show_status(current_room, inventory, rooms):
     """Display the player's current game status."""
-    # TODO: Show the current room.
-    # TODO: Show the current inventory.
-    # TODO: Show the current-room item when one is available.
+    print("\nYou are in the", current_room)
+    print("Inventory:", inventory)
     pass
 
+    if rooms[current_room]["item"] is not None:
+        print("You see a", rooms[current_room]["item"])
 
 def main():
     """Run the main gameplay loop."""
-    # TODO: Create the full room/item dictionary from your Project One map.
+    rooms = {
+        "Entrance Hall": {
+            "north": "Kitchen",
+            "east": "Dining Room",
+            "item": None
 
-    # TODO: Set the player's starting room.
+        },
+        "Kitchen": {
+            "south": "Entrance Hall",
+            "east": "Study",
+            "item": "Flashlight"
+        },
+        "Dining Room": {
+            "west": "Entrance Hall",
+            "south": "Basement",
+            "item": "Silver Coin"
+        },
+        "Basement": {
+            "north": "Dining Room",
+            "east": "Library",
+            "item": "Rope"
+        },
+        "Study": {
+            "west": "Kitchen",
+            "east": "Bedroom",
+            "item": "Ancient Book"
+        },
+        "Library": {
+            "west": "Basement",
+            "north": "Bedroom",
+            "item": "Old Key"
+        },
+        "Bedroom": {
+            "west": "Study",
+            "south": "Library",
+            "north": "Attic",
+            "item": "Skeleton Key"
+        },
+        "Attic": {
+            "south": "Bedroom",
+            "item": None
 
-    # TODO: Create the player's inventory.
+    # TODO:   
+            current_room = "Entrance Hall"
+    inventory = []
 
-    # TODO: Call the instruction function at the appropriate time.
+    # TODO: 
+    show_instructions()
+
+    playing = True
 
     # TODO: Create the gameplay loop.
-    # Within the loop:
-    #   - Show player status.
-    #   - Prompt for the player's next command.
-    #   - Handle valid movement commands.
-    #   - Handle valid get-item commands.
-    #   - Validate invalid commands.
-    #   - Update room/inventory state when appropriate.
-    #   - Detect and display the required winning outcome.
-    #   - Detect and display the required losing outcome.
-    #   - End the loop when the player has won or lost.
+    while playing:
+        show_status(current_room, inventory, rooms)
+
+        if current_room == "Attic":
+            if len(inventory) == 6:
+                print("You collected all six items!")
+                print("You defeated the Shadow! You win!")
+            else:
+                print("The Shadow caught you! You lose!")
+            break
+
+        command = input("Enter your move: ").lower().strip()
+
+        if command == "quit":
+            print("Thanks for playing!")
+            playing = False
+
+        elif command.startswith("get "):
+            item_name = command[4:].strip().lower()
+            room_item = rooms[current_room]["item"]
+
+            if room_item is not None and item_name == room_item.lower():
+                inventory.append(room_item)
+                rooms[current_room]["item"] = None
+                print("You collected the", room_item)
+            else:
+                print("That item is not available here.")
+
+        elif command in rooms[current_room]:
+            current_room = rooms[current_room][command]
+
+        else:
+            print("Invalid command. Try again.")
     pass
 
 
